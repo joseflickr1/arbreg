@@ -58,7 +58,8 @@
     "react-test-renderer": "16.3.2",
     "redux-form": "7.3.0",
     "redux-thunk": "2.2.0",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "npm-run-all": "4.1.2"
   },
   "scripts": {
     "delete-static": "node scripts/deletestatic.js",
@@ -77,10 +78,9 @@
     "start:express": "node index.js",
     "build": "npm run delete-static && npm run build:tekster && npm run build:ts",
     "integrationtest": "node integration/nightwatch.js -c integration/default.conf.js",
-    "heroku-postbuild": "node scripts/preHeroku.js && npm install && npm run build -- --env.dev && node scripts/postHeroku.js"
+    "heroku-postbuild": "node scripts/preHeroku.js && npm install && npm run build && node scripts/postHeroku.js"
   },
   "devDependencies": {
-    "npm-run-all": "4.1.2",
     "@nutgaard/react-scripts": "0.0.8-beta.4",
     "@types/classnames": "2.2.3",
     "@types/fetch-mock": "5.12.2",
